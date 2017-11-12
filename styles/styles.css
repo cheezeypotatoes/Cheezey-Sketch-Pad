@@ -1,0 +1,47 @@
+body {
+  background-color:  #DAF7A6 ;
+}
+
+#app-container {
+  display: flex;
+  justify-content: center;
+  /*padding-top: 50px;*/
+  border: 2px solid black;
+}
+
+.flex-container {
+  flex-grow: 1;
+}
+
+.flex-item {
+  color: white;
+  background-color: white;
+  /*border: 1px solid black;*/
+  /*font-size: 25px;*/
+}
+
+.welcome {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+}
+
+.black {
+  background-color: black;
+  color: black;
+}
+
+.red {
+  background-color: red;
+  color: red;
+}
+
+.green {
+  background-color: green;
+  color: green;
+}
+
+.yellow {
+  background-color: yellow;
+  color: yellow;
+}
