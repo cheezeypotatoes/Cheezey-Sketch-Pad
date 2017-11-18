@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  let text = $('#red').text()
+  let redRGB = $('#red').val(text)
+  let greenRGB = $('#green').val(text)
+  let blueRGB = $('#blue').val(text)
+  console.log(redRGB, greenRGB, blueRGB);
 
   //clears any existing grid before drawing a new one.
   $('.create').click(function() {
@@ -15,6 +20,20 @@ $(document).ready(function() {
         $(this).append('<div class="flex-item">X</div>')
       }
     })
+    let isShowingGrid = false
+    $('.toggle-grid-lines').click(function() {
+      if(isShowingGrid) {
+
+        $('.flex-item').removeClass('grid-lines')
+        isShowingGrid = !isShowingGrid
+        // console.log(isShowingGrid);
+      } else {
+
+        $('.flex-item').addClass('grid-lines')
+        isShowingGrid = !isShowingGrid
+        // console.log(isShowingGrid);
+      }
+    })
 
     //Event handler uses isDrawing to determine if the app is drawing or not and executes events accordingly. isDrawing gets toggled accordingly.
     let isDrawing = false
@@ -29,7 +48,14 @@ $(document).ready(function() {
 
       } else {
         $('.flex-item').mouseover(function() {
-          $(this).addClass(color)
+          if($('.select-color').val() === 'custom') {
+            let rgbColor = redRGB.val() + ', ' + greenRGB.val() + ', ' + blueRGB.val()
+            $(this).css('background-color', 'rgb(' + rgbColor + ')')
+            $(this).css('color', 'rgb(' + rgbColor + ')')
+          }
+
+          $(this).css('background-color',  color)
+          $(this).css('color', color)
         })
         isDrawing = !isDrawing
         console.log(isDrawing);

@@ -7,26 +7,36 @@
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
   <body>
-    <select class="select-grid-size" name="">
-      <option value="32">32X32</option>
-      <option value="64">64X64</option>
-      <option value="128">128X128</option>
-    </select>
-
-    <button class="create" type="button" name="button">Create/Clear</button>
-
-    <select class="select-color" name="">
-      <option  value="black">Black</option>
-      <option  value="red">Red</option>
-      <option  value="green">Green</option>
-      <option  value="yellow">Yellow</option>
-    </select>
-
-    
-
-    <div class="welcome">Hello and welcome to my cheezey sketchpad. This was a project assignment from The Odin Project's web development 101 course. It is an exercise of knowing basic html and css, with javascript and jquery. It works very simply. Select a grid size from the dropdown above and click create. Once your cheezey sketchpad has been prepared you can begin to draw by selecting a color from the dropdown menu, moving the cursor over the sketchpad and clicking once. This will begin to draw as you move the mouse over the sketchpad. If you want to stop drawing, click again and the cursor will stop drawing and allow you to move to another area to click and begin drawing again. To change colors, first click to stop drawing then select a new color.
+    <div class="welcome">Hello and welcome to my cheezey sketchpad. This was a project assignment from The Odin Project's web development 101 course. It is an exercise of knowing basic html and css, with javascript and jquery. It works very simply. Select a grid size from the dropdown above and click create (128x128 takes a sec). Once your cheezey sketchpad has been prepared you can begin to draw by selecting a color from the dropdown menu, moving the cursor over the sketchpad and clicking once. This will begin to draw as you move the mouse over the sketchpad. If you want to stop drawing, click again and the cursor will stop drawing and allow you to move to another and begin drawing again. To change colors, first click to stop drawing then select a new color. Use the Custom RGB option then input your desired numeric values for red, green and blue. To lean more about rgb colors look <a href="http://htmlcolorcodes.com/color-picker/" target="_blank">Here.</a> Also you can toggle on/off the gridlines for more percise drawing. Thanks for looking and have fun. Eventually I'd like a way to capture the drawing and be able to email it to someone.
 
     </div>
+    <div class="tool-bar">
+      <select class="select-grid-size" name="">
+        <option value="32">32X32</option>
+        <option value="64">64X64</option>
+        <option value="128">128X128</option>
+      </select>
+
+      <button class="create" type="button" name="button">Create/Clear</button>
+
+      <select class="select-color" name="">
+        <option  value="black">Black</option>
+        <option  value="red">Red</option>
+        <option  value="green">Green</option>
+        <option  value="yellow">Yellow</option>
+        <option  value="blue">Blue</option>
+        <option  value="purple">Purple</option>
+        <option  value="custom">Custom RGB</option>
+        <option  value="white">Eraser</option>
+      </select>
+      <input id="red" type="text" value="" placeholder="red value">
+      <input id="green" type="text" value="" placeholder="green value">
+      <input id="blue" type="text" value="" placeholder="blue value">
+      <!-- <button class="set-custom-color" type="button" name="button">Set Custom Color</button> -->
+      <button class="toggle-grid-lines" type="button" name="button">Toggle Grid Lines</button>
+      <a class="projects" href="projects.html">Projects</a>
+    </div>
+
     <div id="app-container">
 
     </div>
