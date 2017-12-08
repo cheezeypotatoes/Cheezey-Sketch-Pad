@@ -40,6 +40,14 @@ $(document).ready(function() {
     console.log(isDrawing);
     $('.flex-item').click(function() {
       let color = $('.select-color').val()
+      if($('.select-color').val() === 'custom') {
+        let rgbColor = redRGB.val() + ', ' + greenRGB.val() + ', ' + blueRGB.val()
+        $(this).css('background-color', 'rgb(' + rgbColor + ')')
+        $(this).css('color', 'rgb(' + rgbColor + ')')
+      }
+
+      $(this).css('background-color',  color)
+      $(this).css('color', color)
 
       if(isDrawing) {
         $('.flex-item').unbind('mouseover')
