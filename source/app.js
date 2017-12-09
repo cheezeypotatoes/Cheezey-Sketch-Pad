@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  let text = $('#red').text()
+  let text = ''
   let redRGB = $('#red').val(text)
   let greenRGB = $('#green').val(text)
   let blueRGB = $('#blue').val(text)
@@ -39,7 +39,7 @@ $(document).ready(function() {
         // console.log(isShowingGrid);
       }
     })
-    //button to save a custom RGB color, a lebel must be entered or user is alerted
+    //button to save a custom RGB color, a label must be entered or user is alerted
     $('.save-color').click(function() {
       if (colorLabel.val() === '') {
         alert("Please enter a label for your color")
