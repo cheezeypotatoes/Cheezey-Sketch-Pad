@@ -3,7 +3,9 @@ $(document).ready(function() {
   let redRGB = $('#red').val(text)
   let greenRGB = $('#green').val(text)
   let blueRGB = $('#blue').val(text)
-  console.log(redRGB, greenRGB, blueRGB);
+  let colorLabel = $('#color-label')
+  let savedColors = []
+
 
   //clears any existing grid before drawing a new one.
   $('.create').click(function() {
@@ -14,12 +16,15 @@ $(document).ready(function() {
     for (let i = 1; i <= gridSize; i++) {
       $('#app-container').append('<div class="flex-container"></div>')
     }
+
     //creates the flex items inside each flex container according to gridSize.
     $('.flex-container').each(function() {
       for (let i2 = 1; i2 <= gridSize; i2++) {
         $(this).append('<div class="flex-item">X</div>')
       }
     })
+
+    //button to togggle grid lines on/off
     let isShowingGrid = false
     $('.toggle-grid-lines').click(function() {
       if(isShowingGrid) {
@@ -34,6 +39,27 @@ $(document).ready(function() {
         // console.log(isShowingGrid);
       }
     })
+
+    $('.save-color').click(function() {
+      if (colorLabel.val() === '') {
+        alert("Please enter a label for your color")
+        return
+      }
+      savedColors.push(redRGB.val() + ', ' + greenRGB.val() + ', ' + blueRGB.val() + " " + colorLabel.val())
+      $('.saved-colors').append('<option class="custom-color" value="' + redRGB.val() + ', ' + greenRGB.val() + ', ' + blueRGB.val() +'">' + colorLabel.val() + '</option>')
+      $('#color-label').val('')
+    })
+
+    $('.load-saved-color').click(function() {
+      array = []
+      array.push($('.saved-colors').val())
+      array = array.join().split(',')
+      $('#red').val(array[0])
+      $('#green').val(array[1])
+      $('#blue').val(array[2])
+    })
+
+
 
     //Event handler uses isDrawing to determine if the app is drawing or not and executes events accordingly. isDrawing gets toggled accordingly.
     let isDrawing = false
