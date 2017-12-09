@@ -57,6 +57,8 @@ $(document).ready(function() {
       $('#red').val(array[0])
       $('#green').val(array[1])
       $('#blue').val(array[2])
+      $('.select-color').val('custom')
+      
     })
 
 
