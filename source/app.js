@@ -39,7 +39,7 @@ $(document).ready(function() {
         // console.log(isShowingGrid);
       }
     })
-
+    //button to save a custom RGB color, a lebel must be entered or user is alerted
     $('.save-color').click(function() {
       if (colorLabel.val() === '') {
         alert("Please enter a label for your color")
@@ -49,7 +49,7 @@ $(document).ready(function() {
       $('.saved-colors').append('<option class="custom-color" value="' + redRGB.val() + ', ' + greenRGB.val() + ', ' + blueRGB.val() +'">' + colorLabel.val() + '</option>')
       $('#color-label').val('')
     })
-
+    //button to load a saved custom color.
     $('.load-saved-color').click(function() {
       array = []
       array.push($('.saved-colors').val())
@@ -58,7 +58,7 @@ $(document).ready(function() {
       $('#green').val(array[1])
       $('#blue').val(array[2])
       $('.select-color').val('custom')
-      
+
     })
 
 
